@@ -1,6 +1,5 @@
 tag App
   def render
-    <self>
-      <h1> "This is IMBA!"
+    console.log('Flute & Violin')
 
 Imba.mount <App>

@@ -1,12 +1,14 @@
 doctype html
 head
   meta(charset='utf-8')
-  title Parcel Starter Kit
-  meta(name='description' content='')
-  meta(name='viewport' content='width=device-width, initial-scale=1')
-  link(rel='manifest' href='site.webmanifest')
-  link(rel='apple-touch-icon' href='icon.png')
-  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css')
+  meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0")
+  meta(name="description" itemprop="description" content="We perform flute and violin music for San Antonio weddings, receptions and events.")
+  meta(name="keywords" itemprop="keywords" content="San Antonio Wedding Music, Reception Music, Event Music, Violin Music, Flute Music")
+  link(href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css' rel='stylesheet')
+  link(href='https://fonts.googleapis.com/css?family=Quintessential' rel='stylesheet' type='text/css')
+  link(href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css')
+  link(href='index.styl' rel='stylesheet' type='text/css')
+  title Flute & Violin
 
 body
   //if IE
@@ -17,5 +19,268 @@ body
       a(href='https://browsehappy.com/') upgrade your browser
       |  to improve your experience and security.
   // Add your site or application content here
+  
+  // masthead
+  div.ui.vertical.masthead.center.aligned.segment#home
+    div.ui.container
+      div.ui.large.secondary.inverted.pointing.menu
+        a.item(href='#home') home
+        a.item(href='#listen') listen
+        a.item(href='#prices') prices
+        a.item(href='#footer') about
+        div.right.item
+          a.ui.inverted.button(href='#booking') contact
+    div.ui.text.container
+      h1.ui.inverted.header Flute & Violin
+      p.tagline by leah clark & ellen chappell
+
+  // callout
+  div.ui.vertical.center.aligned.segment.callout
+    p. 
+      Complement your occasion with the mellifluous strains of flute & violin.
+
+  // listen
+  div.ui.vertical.stripe.segment#listen
+    div.ui.container
+      h3.ui.horizontal.divider.header
+        i.music.icon
+        | Listen
+
+    div.ui.container
+      div.ui.equal.width.stackable.grid
+        div.column
+          a.ui.massive.fluid.animated.fade.gray.music.button
+            audio
+              source(src='autumn.mp3')
+            div.hidden.content
+              i.play.icon
+            div.visible.content
+              i.play.icon
+              | Autumn
+        div.column
+          a.ui.massive.fluid.animated.fade.gray.music.button
+            audio
+              source(src='/bouree.mp3')
+            div.hidden.content
+              i.play.icon
+            div.visible.content
+              i.play.icon
+              | Bouree
+        div.column
+          a.ui.massive.fluid.animated.fade.gray.music.button
+            audio
+              source(src='canon.mp3')
+            div.hidden.content
+              i.play.icon
+            div.visible.content
+              i.play.icon
+              | Canon
+        div.column
+          a.ui.massive.fluid.animated.fade.gray.music.button
+            audio
+              source(src='frivolity.mp3')
+            div.hidden.content
+              i.play.icon
+            div.visible.content
+              i.play.icon
+              | Frivolity
+
+  // prices
+  div.ui.vertical.stripe.segement#prices
+    div.ui.container
+      h3.ui.horizontal.divider.header
+        i.dollar.icon
+        | Prices
+        
+    div.ui.container
+      div.ui.equal.width.stackable.grid
+        div.column
+          table.ui.blue.selectable.table
+            thead
+              tr.center.aligned
+                th(colspan='2')
+                  h3 Wedding
+            tbody
+              tr
+                td.center.aligned
+                  h4 Prelude
+                    small 30 minutes of pre-wedding music
+                td.center.aligned
+                  div.ui.tiny.blue.statistic
+                    div.value 300
+              tr
+                td.center.aligned
+                  h4 Marches
+                    small processional and/or recessional
+                td.center.aligned
+                  div.ui.tiny.blue.statistic
+                    div.value 300
+              tr
+                td.center.aligned
+                  h4 Ceremony
+                    small up to three pieces
+                td.center.aligned
+                  div.ui.tiny.blue.statistic
+                    div.value 300
+              tr
+                td.center.aligned
+                  h4 Prelude & Marches
+                td.center.aligned
+                  div.ui.tiny.blue.statistic
+                    div.value 400
+              tr
+                td.center.aligned
+                  h4 Prelude & Ceremony
+                td.center.aligned
+                  div.ui.tiny.blue.statistic
+                    div.value 400
+              tr
+                td.center.aligned
+                  h4 Marches & Ceremony
+                td.center.aligned
+                  div.ui.tiny.blue.statistic
+                    div.value 400
+              tr
+                td.center.aligned
+                  h4 Prelude, Marches & Ceremony
+                td.center.aligned
+                  div.ui.tiny.blue.statistic
+                    div.value 450
+                    
+        div.column          
+          table.ui.blue.selectable.table
+            thead
+              tr.center.aligned
+                th(colspan='2')
+                  h3 Reception
+            tbody
+              tr
+                td.center.aligned
+                  h4 One hour
+                td.center.aligned
+                  div.ui.tiny.blue.statistic
+                    div.value 300
+              tr
+                td.center.aligned
+                  h4 Two hours
+                td.center.aligned
+                  div.ui.tiny.blue.statistic
+                    div.value 500
+              tr
+                td.center.aligned
+                  h4 Three hours
+                td.center.aligned
+                  div.ui.tiny.blue.statistic
+                    div.value 625
+              tr
+                td.center.aligned
+                  h4 Each additional hour
+                td.center.aligned
+                  div.ui.tiny.blue.statistic
+                    div.value 150
+                    
+        div.column
+          table.ui.blue.selectable.table
+            thead
+              tr.center.aligned
+                th(colspan='2')
+                  h3 Wedding & Reception
+            tbody
+              tr
+                td.center.aligned
+                  h4 Wedding service and one hour
+                td.center.aligned
+                  div.ui.tiny.blue.statistic
+                    div.value 600
+              tr
+                td.center.aligned
+                  h4 Wedding service and two hours
+                td.center.aligned
+                  div.ui.tiny.blue.statistic
+                    div.value 750
+              tr
+                td.center.aligned
+                  h4 Wedding service and three hours
+                td.center.aligned
+                  div.ui.tiny.blue.statistic
+                    div.value 850
+
+  // booking
+  div.ui.vertical.stripe.segment#booking
+    div.ui.container
+      h3.ui.horizontal.divider.header
+        i.calendar.icon
+        | Contact
+        
+      div.ui.large.form
+        div.three.fields
+          div.required.full_name.field
+            label Your Full Name
+            input#full_name(
+              type='text'
+              name='full_name'
+              maxlength='30'
+              value='')
+          div.required.mobile.field
+            label Mobile phone
+            input#mobile(
+              type='tel' 
+              name='mobile' 
+              maxlength='10' 
+              value='')
+          div.required.event_date.field
+            label Date of Event
+            input.ui#event_date(
+              readonly
+              type='text' 
+              name='event_date' 
+              value='')
+        div.two.fields
+          div.required.event_location.field
+            label Event Location
+            input#event_location(
+              type='text' 
+              name='event_location' 
+              maxlength='100'
+              value='')
+          div.required.services.field
+            label Services
+            select.ui.dropdown#services(multiple='' name='service_ids')
+              //- each services
+              //-   option(value=_id) $#{price} - #{name}
+        div.ui.segment
+          div.required.inline.contract_accepted.field
+            div.ui.toggle.checkbox
+              input.hidden#contract_accepted(
+                type='checkbox'
+                name='contract_accepted'
+                checked='')
+              label(for="contract_accepted")
+                | I have read and agree to the terms of the
+                a(href='fluteviolin_contract.pdf' target='_blank') contract
+        
+        .ui.three.column.stackable.centered.grid
+          .column
+            button.massive.fluid.ui.primary.button#book-now(type='submit') Contact
+
+  // about
+  div.ui.inverted.vertical.footer.segment#footer
+    div.ui.container
+      h3.ui.horizontal.divider.inverted.header
+        | About
+      
+      div.ui.stackable.inverted.equal.height.centered.grid
+        div.eight.wide.right.aligned.column
+          img.ui.small.circular.right.floated.image(src='ellen.png')
+          p
+            strong Ellen
+          p.bio.
+            Ellen was trained at a young age using the Suzuki Violin Method, and later played in school and college orchestras, string quartets, and other ensembles. Her undergraduate degree is in German with a minor in Math (from UT Austin), and she has a Master of Arts degree in German from Middlebury College.
+        div.eight.wide.column
+          img.ui.small.circular.left.floated.image(src='leah.png')
+          p
+            strong Leah
+          p.bio.
+            Leah began playing flute at age eleven, and has since played in various musical ensembles, including school and college bands, as well as a flute choir. She attended Texas Lutheran University, earning a Bachelor of Arts degree in Social Work, and the University of Texas Health Science Center, earning a Bachelor of Science in Nursing.
 
   script(src='index.js')
