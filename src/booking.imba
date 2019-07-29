@@ -1,26 +1,26 @@
 export tag Booking
 
   WEDDING = [
-    { _id: 1, name: 'Prelude', price: 300.00 }
-    { _id: 2, name: 'Marches', price: 300.00 }
-    { _id: 3, name: 'Ceremony', price: 300.00 }
-    { _id: 4, name: 'Prelude & Marches', price: 400.00 }
-    { _id: 5, name: 'Prelude & Ceremony', price: 400.00 }
-    { _id: 6, name: 'Marches & Ceremony', price: 400.00 }
-    { _id: 7, name: 'Prelude, Marches & Ceremony', price: 450.00 }
+    { id: 1, name: 'Prelude', price: 300.00 }
+    { id: 2, name: 'Marches', price: 300.00 }
+    { id: 3, name: 'Ceremony', price: 300.00 }
+    { id: 4, name: 'Prelude & Marches', price: 400.00 }
+    { id: 5, name: 'Prelude & Ceremony', price: 400.00 }
+    { id: 6, name: 'Marches & Ceremony', price: 400.00 }
+    { id: 7, name: 'Prelude, Marches & Ceremony', price: 450.00 }
   ]
 
   RECEPTION = [
-    { _id: 8, name: '1 Hour Reception', price: 300.00 }
-    { _id: 9, name: '2 Hour Reception', price: 500.00 }
-    { _id: 10, name: '3 Hour Reception', price: 625.00 }
-    { _id: 11, name: '4 Hour Reception', price: 775.00 }
+    { id: 8, name: '1 Hour Reception', price: 300.00 }
+    { id: 9, name: '2 Hour Reception', price: 500.00 }
+    { id: 10, name: '3 Hour Reception', price: 625.00 }
+    { id: 11, name: '4 Hour Reception', price: 775.00 }
   ]
 
   BOTH = [
-    { _id: 12, name: 'Wedding Service & 1 Hour Reception', price: 600.00 }
-    { _id: 13, name: 'Wedding Service & 2 Hour Reception', price: 750.00 }
-    { _id: 14, name: 'Wedding Service & 3 Hour Reception', price: 850.00 }
+    { id: 12, name: 'Wedding Service & 1 Hour Reception', price: 600.00 }
+    { id: 13, name: 'Wedding Service & 2 Hour Reception', price: 750.00 }
+    { id: 14, name: 'Wedding Service & 3 Hour Reception', price: 850.00 }
   ]
 
   def services
@@ -53,7 +53,7 @@ export tag Booking
                 <label> "Services"
                 <select.ui.dropdown#services multiple name='service_ids'>
                   for service in services
-                    <option value="{service:price}"> "${service:price} - {service:name}"
+                    <option value="{service:id}"> "${service:price} - {service:name}"
             <div.ui.segment>
               <div.required.inline.contract_accepted.field>
                 <div.ui.toggle.checkbox>
