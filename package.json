@@ -6,6 +6,9 @@
   "dependencies": {
     "parcel-bundler": "^1.12.3"
   },
+  "scripts": {
+    "build": "parcel src/index.pug"
+  },
   "devDependencies": {
     "imba": "^1.4.4",
     "imba-router": "^0.2.0",
