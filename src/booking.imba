@@ -34,7 +34,7 @@ export tag Booking
             <i.calendar.icon>
             "Contact"
             
-          <form.ui.large.form>
+          <form.ui.large.form method='post' name='booking'>
             <input type='hidden' name='form-name' value='booking'>
             <div.three.fields>
               <div.required.full_name.field>
