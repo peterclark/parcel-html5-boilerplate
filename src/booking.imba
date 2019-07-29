@@ -44,7 +44,7 @@ export tag Booking
                 <input#mobile type='tel' name='mobile' maxlength='10' value=''>
               <div.required.event_date.field>
                 <label> "Date of Event"
-                <input.ui#event_date type='text' name='event_date' value=''>
+                <input.ui#eventDate type='text' name='event_date' value=''>
             <div.two.fields>
               <div.required.event_location.field>
                 <label> "Event Location"
