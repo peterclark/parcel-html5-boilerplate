@@ -34,21 +34,22 @@ export tag Booking
             <i.calendar.icon>
             "Contact"
             
-          <div.ui.large.form>
+          <form.ui.large.form>
+            <input type='hidden' name='form-name' value='booking'>
             <div.three.fields>
               <div.required.full_name.field>
                 <label> "Your Full Name"
-                <input#full_name type='text' name='full_name' maxlength='30' value=''>
+                <input#fullName@fullName type='text' name='full_name' maxlength='30' value=''>
               <div.required.mobile.field>
                 <label> "Mobile phone"
-                <input#mobile type='tel' name='mobile' maxlength='10' value=''>
+                <input#mobile@to type='tel' name='mobile' maxlength='10' value=''>
               <div.required.event_date.field>
                 <label> "Date of Event"
                 <input.ui#eventDate type='text' name='event_date' value=''>
             <div.two.fields>
               <div.required.event_location.field>
                 <label> "Event Location"
-                <input#event_location type='text' name='event_location' maxlength='100' value=''>
+                <input#eventLocation type='text' name='event_location' maxlength='100' value=''>
               <div.required.services.field>
                 <label> "Services"
                 <select.ui.dropdown#services multiple name='service_ids'>
@@ -57,11 +58,11 @@ export tag Booking
             <div.ui.segment>
               <div.required.inline.contract_accepted.field>
                 <div.ui.toggle.checkbox>
-                  <input.hidden#contract_accepted type='checkbox' name='contract_accepted' checked=''>
+                  <input.hidden#contractAccepted type='checkbox' name='contract_accepted' checked=''>
                   <label for="contract_accepted">
                     <span> "I have read and agree to the terms of the"
                     <a href='fluteviolin_contract.pdf' target='_blank'> " contract"
             
             <div.ui.three.column.stackable.centered.grid>
               <div.column>
-                <button.massive.fluid.ui.primary.button#book-now type='submit'> "Contact"
+                <button.massive.fluid.ui.primary.button#bookNow type='submit'> "Contact"

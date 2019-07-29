@@ -19,6 +19,13 @@ body
       |  browser. Please 
       a(href='https://browsehappy.com/') upgrade your browser
       |  to improve your experience and security.
+
+  // hidden form to allow submission of form data to netlify
+  form(name='booking' netlify netlify-honeypot='bot-field' hidden)
+    input(type='text' name='full_name')
+    input(type='text' name='mobile')
+    input(type='text' name='event_date')
+    input(type='text' name='event_location')
   
   // scripts
   script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js')
