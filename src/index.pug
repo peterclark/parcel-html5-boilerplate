@@ -26,6 +26,8 @@ body
     input(type='text' name='mobile')
     input(type='text' name='event_date')
     input(type='text' name='event_location')
+    select(type='text' name='services')
+    input(type='checkbox' name='contract_accepted')
   
   // scripts
   script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js')
@@ -41,3 +43,4 @@ body
       format: 'D MMMM, YYYY',
     });
     $('.dropdown').dropdown()
+    $('.checkbox').checkbox()

@@ -52,9 +52,9 @@ export tag Booking
                 <input#eventLocation type='text' name='event_location' maxlength='100' value=''>
               <div.required.services.field>
                 <label> "Services"
-                <select.ui.dropdown#services multiple name='service_ids'>
+                <select.ui.dropdown#services multiple name='services'>
                   for service in services
-                    <option value="{service:id}"> "${service:price} - {service:name}"
+                    <option> "${service:price} - {service:name}"
             <div.ui.segment>
               <div.required.inline.contract_accepted.field>
                 <div.ui.toggle.checkbox>
