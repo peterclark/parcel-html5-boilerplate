@@ -4,11 +4,17 @@
   |  browser. Please 
   a(href='https://browsehappy.com/') upgrade your browser
   |  to improve your experience and security.
---><!-- hidden form to allow submission of form data to netlify--><form name="booking" netlify="" netlify-honeypot="bot-field" hidden=""><input type="text" name="full_name"><input type="text" name="mobile"><input type="text" name="event_date"><input type="text" name="event_location"><select type="text" name="services" multiple=""></select><input type="checkbox" name="contract_accepted"></form><!-- scripts--><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/pikaday.min.js"></script><script src="/src.e31bb0bc.js"></script><script>var datepicker = new Pikaday({
+--><!-- hidden form to allow submission of form data to netlify--><form name="booking" netlify="" netlify-honeypot="bot-field" hidden=""><input type="text" name="full_name"><input type="text" name="mobile"><input type="text" name="event_date"><input type="text" name="event_location"><select type="text" name="services" multiple=""></select><input type="checkbox" name="contract_accepted"></form><!-- hidden thank you modal--><div class="ui basic modal"><div class="content"><h1 class="ui center aligned huge inverted header">Got it!</h1><h2 class="ui center aligned inverted header"> Once we review your request, we'll contact you to confirm the details.</h2><h2 class="ui center aligned red header"><i class="heart icon"></i>leah & ellen</h2></div></div><!-- scripts--><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/pikaday.min.js"></script><script src="/src.e31bb0bc.js"></script><script>var datepicker = new Pikaday({
   field: $('#eventDate')[0],
   minDate: moment().add(1, 'day').toDate(),
   maxDate: moment().add(365, 'days').toDate(),
   format: 'D MMMM, YYYY'
 });
 $('.dropdown').dropdown();
-$('.checkbox').checkbox();</script></body>
+$('.checkbox').checkbox();
+
+if (window.location.search.indexOf('p=thanks') > -1) {
+  setTimeout(function () {
+    return $('.ui.basic.modal').modal('show');
+  }, 250);
+}</script></body>

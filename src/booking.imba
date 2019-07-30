@@ -34,7 +34,7 @@ export tag Booking
             <i.calendar.icon>
             "Contact"
             
-          <form.ui.large.form method='post' name='booking'>
+          <form.ui.large.form method='post' name='booking' action="/?p=thanks" >
             <input type='hidden' name='form-name' value='booking'>
             <div.three.fields>
               <div.required.full_name.field>
@@ -65,4 +65,4 @@ export tag Booking
             
             <div.ui.three.column.stackable.centered.grid>
               <div.column>
-                <button.massive.fluid.ui.primary.button#bookNow type='submit'> "Contact"
+                <button.massive.fluid.ui.primary.button#bookNow@bookNow type='submit'> "Contact"

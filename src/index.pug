@@ -28,6 +28,17 @@ body
     input(type='text' name='event_location')
     select(type='text' name='services' multiple)
     input(type='checkbox' name='contract_accepted')
+
+  // hidden thank you modal
+  div.ui.basic.modal
+    div.content
+      h1.ui.center.aligned.huge.inverted.header
+        | Got it!
+      h2.ui.center.aligned.inverted.header 
+        | Once we review your request, we'll contact you to confirm the details.
+      h2.ui.center.aligned.red.header
+        i.heart.icon
+        | leah & ellen
   
   // scripts
   script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js')
@@ -44,3 +55,6 @@ body
     });
     $('.dropdown').dropdown()
     $('.checkbox').checkbox()
+    if(window.location.search.indexOf('p=thanks') > -1) {
+      setTimeout(() => $('.ui.basic.modal').modal('show'), 250);
+    }
