@@ -1,3 +1,12 @@
+const booking = {
+  fullName: '',
+  mobile: '',
+  date: '',
+  location: '',
+  services: [],
+  agreeToTerms: false,
+}
+
 export tag Booking
 
   WEDDING = [
@@ -26,6 +35,27 @@ export tag Booking
   def services
     WEDDING.concat RECEPTION, BOTH
 
+  def validateBooking e
+    @bookNow.dom:classList.add('loading')
+    clearErrors
+    const errors = []
+    for field in ['fullName', 'mobile', 'date', 'location']
+      if !booking[field] || booking[field].trim:length == 0
+        errors.push field
+    if !booking:services || booking:services:length == 0
+      errors.push('services')
+    if booking:agreeToTerms !== true
+      errors.push('agreeToTerms')
+    for field in errors
+      document.querySelector(".{field}"):classList.add('error')
+    if errors:length > 0
+      e.prevent
+      @bookNow.dom:classList.remove('loading')
+
+  def clearErrors
+    for field in Object.keys(booking)
+      document.querySelector(".{field}"):classList.remove('error')
+
   def render
     <self>
       <div.ui.vertical.stripe.segment#booking>
@@ -34,31 +64,31 @@ export tag Booking
             <i.calendar.icon>
             "Contact"
             
-          <form.ui.large.form method='post' name='booking' action="/?p=thanks" >
+          <form.ui.large.form method='post' name='booking' action="/?p=thanks" :submit.validateBooking>
             <input type='hidden' name='form-name' value='booking'>
             <div.three.fields>
-              <div.required.full_name.field>
+              <div.required.fullName.field>
                 <label> "Your Full Name"
-                <input#fullName@fullName type='text' name='full_name' maxlength='30' value=''>
+                <input#fullName[booking:fullName] type='text' name='full_name' maxlength='30' value=''>
               <div.required.mobile.field>
                 <label> "Mobile phone"
-                <input#mobile@to type='tel' name='mobile' maxlength='10' value=''>
-              <div.required.event_date.field>
+                <input#mobile[booking:mobile] type='tel' name='mobile' maxlength='10' value=''>
+              <div.required.date.field>
                 <label> "Date of Event"
-                <input.ui#eventDate type='text' name='event_date' value=''>
+                <input.ui#eventDate[booking:date] type='text' name='event_date' value=''>
             <div.two.fields>
-              <div.required.event_location.field>
+              <div.required.location.field>
                 <label> "Event Location"
-                <input#eventLocation type='text' name='event_location' maxlength='100' value=''>
+                <input#eventLocation[booking:location] type='text' name='event_location' maxlength='100' value=''>
               <div.required.services.field>
                 <label> "Services"
-                <select.ui.dropdown#services multiple name='services'>
+                <select.ui.dropdown#services[booking:services] multiple name='services'>
                   for service in services
                     <option> "${service:price} - {service:name}"
             <div.ui.segment>
-              <div.required.inline.contract_accepted.field>
+              <div.required.inline.agreeToTerms.field>
                 <div.ui.toggle.checkbox>
-                  <input.hidden#contractAccepted type='checkbox' name='contract_accepted' checked=''>
+                  <input.hidden#agreeToTerms[booking:agreeToTerms] type='checkbox' name='contract_accepted' checked=''>
                   <label for="contract_accepted">
                     <span> "I have read and agree to the terms of the"
                     <a href='fluteviolin_contract.pdf' target='_blank'> " contract"

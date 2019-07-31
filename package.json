@@ -7,7 +7,8 @@
     "parcel-bundler": "^1.12.3"
   },
   "scripts": {
-    "build": "parcel src/index.pug"
+    "parcel": "parcel src/index.pug",
+    "imba": "imbapack --watch --mode=development src/*.imba -o src/index.js"
   },
   "devDependencies": {
     "imba": "^1.4.4",
