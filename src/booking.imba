@@ -1,13 +1,17 @@
-const booking = {
-  fullName: '',
-  mobile: '',
-  date: '',
-  location: '',
-  services: [],
-  agreeToTerms: false,
-}
+import { ActiveTag } from 'active-tag'
 
-export tag Booking
+export tag Booking < ActiveTag
+  prop fullName
+  prop mobile
+  prop date
+  prop location
+  prop services
+
+  validates fullName: { presence: true }
+  validates mobile: { pattern: /^\d{10}$/ }
+  validates date: { presence: true }
+  validates location: { presence: true }
+  validates services: { length: { in:  [1,3] }}
 
   WEDDING = [
     { id: 1, name: 'Prelude', price: 300.00 }
@@ -32,29 +36,32 @@ export tag Booking
     { id: 14, name: 'Wedding Service & 3 Hour Reception', price: 850.00 }
   ]
 
-  def services
+  def service_options
     WEDDING.concat RECEPTION, BOTH
 
-  def validateBooking e
-    @bookNow.dom:classList.add('loading')
-    clearErrors
-    const errors = []
-    for field in ['fullName', 'mobile', 'date', 'location']
-      if !booking[field] || booking[field].trim:length == 0
-        errors.push field
-    if !booking:services || booking:services:length == 0
-      errors.push('services')
-    if booking:agreeToTerms !== true
-      errors.push('agreeToTerms')
-    for field in errors
-      document.querySelector(".{field}"):classList.add('error')
-    if errors:length > 0
-      e.prevent
-      @bookNow.dom:classList.remove('loading')
+  def onSaveSuccess
+    submitting do
+      console.log 'booking saved'
 
-  def clearErrors
-    for field in Object.keys(booking)
-      document.querySelector(".{field}"):classList.remove('error')
+  def onSaveFailure
+    submitting do
+      markFieldErrors
+
+  def markFieldErrors
+    for field, array of errors
+      document.querySelector(".{field}"):classList.add('error')
+
+  def clearFieldErrors
+    const errorInputs = document.querySelectorAll('.error')
+    for el in errorInputs
+      el:classList.remove('error')
+
+  def submitting block
+    const contactButton = @bookNow.dom:classList
+    clearFieldErrors
+    contactButton.add('loading')
+    block()
+    contactButton.remove('loading')
 
   def render
     <self>
@@ -64,34 +71,32 @@ export tag Booking
             <i.calendar.icon>
             "Contact"
             
-          <form.ui.large.form method='post' name='booking' action="/?p=thanks" :submit.validateBooking>
+          <form.ui.large.form method='post' name='booking' action="/?p=thanks" :submit.save>
             <input type='hidden' name='form-name' value='booking'>
             <div.three.fields>
               <div.required.fullName.field>
                 <label> "Your Full Name"
-                <input#fullName[booking:fullName] type='text' name='full_name' maxlength='30' value=''>
+                <input#fullName[fullName] type='text' name='full_name' maxlength='30' value=''>
               <div.required.mobile.field>
                 <label> "Mobile phone"
-                <input#mobile[booking:mobile] type='tel' name='mobile' maxlength='10' value=''>
+                <input#mobile[mobile] type='tel' name='mobile' maxlength='10' value=''>
               <div.required.date.field>
                 <label> "Date of Event"
-                <input.ui#eventDate[booking:date] type='text' name='event_date' value=''>
+                <input.ui#eventDate[date] type='text' name='event_date' value=''>
             <div.two.fields>
               <div.required.location.field>
                 <label> "Event Location"
-                <input#eventLocation[booking:location] type='text' name='event_location' maxlength='100' value=''>
+                <input#eventLocation[location] type='text' name='event_location' maxlength='100' value=''>
               <div.required.services.field>
                 <label> "Services"
-                <select.ui.dropdown#services[booking:services] multiple name='services'>
-                  for service in services
+                <select.ui.dropdown#services[services] multiple name='services'>
+                  for service in service_options
                     <option> "${service:price} - {service:name}"
             <div.ui.segment>
-              <div.required.inline.agreeToTerms.field>
-                <div.ui.toggle.checkbox>
-                  <input.hidden#agreeToTerms[booking:agreeToTerms] type='checkbox' name='contract_accepted' checked=''>
-                  <label for="contract_accepted">
-                    <span> "I have read and agree to the terms of the"
-                    <a href='fluteviolin_contract.pdf' target='_blank'> " contract"
+              <div.inline>
+                <label for="contract_accepted">
+                  <span> "You can download a copy of our "
+                  <a href='fluteviolin_contract.pdf' target='_blank'> "contract here."
             
             <div.ui.three.column.stackable.centered.grid>
               <div.column>
