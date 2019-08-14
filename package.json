@@ -6,11 +6,16 @@
   "dependencies": {
     "parcel-bundler": "^1.12.3"
   },
+  "scripts": {
+    "parcel": "parcel src/index.pug",
+    "imba": "imbapack --watch --mode=development src/*.imba -o src/index.js"
+  },
   "devDependencies": {
     "imba": "^1.4.4",
     "imba-router": "^0.2.0",
     "parcel-plugin-imba": "^0.1.2",
     "pug": "^2.0.4",
+    "stylus": "^0.54.5",
     "webpack": "^4.38.0",
     "webpack-cli": "^3.3.6"
   }
