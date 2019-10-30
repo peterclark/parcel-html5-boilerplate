@@ -247,7 +247,7 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var Imba = __webpack_require__(/*! imba */ \"./node_modules/imba/imba.imba\"), _1 = Imba.createElement;\nvar App = Imba.defineTag('App', function(tag){\n\ttag.prototype.render = function (){\n\t\tvar $ = this.$;\n\t\treturn this.$open(0).setChildren(\n\t\t\t$[0] || _1('h1',$,0,this).setText(\"This is IMBA!\")\n\t\t,2).synced();\n\t};\n});\n\nImba.mount((_1(App)).end());\n\n\n//# sourceURL=webpack:///./src/index.imba?");
+eval("var Imba = __webpack_require__(/*! imba */ \"./node_modules/imba/imba.imba\"), _1 = Imba.createElement;\nvar App = Imba.defineTag('App', function(tag){\n\ttag.prototype.render = function (){\n\t\tvar $ = this.$;\n\t\treturn this.$open(0).setChildren(\n\t\t\t$[0] || _1('h1',$,0,this).setText(\"Pepop!\")\n\t\t,2).synced();\n\t};\n});\n\nImba.mount((_1(App)).end());\n\n\n//# sourceURL=webpack:///./src/index.imba?");
 
 /***/ })
 

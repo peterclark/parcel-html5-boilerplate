@@ -1,6 +1,6 @@
 tag App
   def render
     <self>
-      <h1> "This is IMBA!"
+      <h1> "Pepop!"
 
 Imba.mount <App>
