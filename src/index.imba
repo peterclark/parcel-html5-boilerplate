@@ -1,6 +1,10 @@
 tag App
   def render
     <self>
-      <h1> "Pepop!"
+      <div#wrapper>
+        <div#bg>
+        <div#overlay>
+        <div#main>
+          <h1.hero> "Pepop"
 
 Imba.mount <App>

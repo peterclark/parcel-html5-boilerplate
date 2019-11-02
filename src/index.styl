@@ -1,2 +1,42 @@
 body
-  padding: 2em
+  background: #f66767
+  color: #3c3d47
+  
+body, h1, h2, h3, h4, h5, h6
+  font-family: 'Passion One', cursive;
+  
+.bg-primary
+  background: #f66767
+  
+.bg-secondary
+  background: #f9d5bb
+  
+.bg-light
+  background: #f9d5bb
+  
+.bg-dark
+  background: #3c3d47
+
+#overlay
+  background-attachment: fixed, fixed
+  background-image: url("overlay-pattern.png"), url("overlay.svg")
+  background-position: top left, center center
+  background-repeat: repeat, no-repeat
+  background-size: auto, cover
+  height: 100%
+  left: 0
+  position: fixed
+  top: 0
+  width: 100%
+  z-index: -1
+  
+#main
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100vh
+  color: white
+  opacity: .75
+  
+.hero
+  font-size: 10em
