@@ -16,9 +16,14 @@ tag App
           <section>
             <h2> "PLEASE RSVP!!"
             <p> "We will be serving a barbeque lunch of 2 meats, potato salad, beans, cole slaw, bread, pickles, onions and tea. Price is $10 for adults and $5 for kids under 10."
+          <section.masthead>
+            <img.reunion-2016.picture src='reunion-2016.jpg' alt="Reunion 2016">
         <aside>
           # <div.sun-icon>
           #   <i.sun.icon>
+          <img.chicago-cousins.picture src='chicago-cousins.jpg' alt="Chicago Cousins">
+          <img.basil-family.picture src='basil-family.jpg' alt="Basil Family">
+          <img.louise-children.picture src='louise-children.jpg' alt="Louise Children">
           <div.location>
             <h2> "Cuny Reunion"
             <p>
