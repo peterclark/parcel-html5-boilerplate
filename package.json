@@ -7,8 +7,10 @@
     "parcel-bundler": "^1.12.3"
   },
   "scripts": {
-    "parcel": "parcel src/index.pug",
-    "imba": "imbapack --watch --mode=development src/*.imba -o src/index.js"
+    "parcel": "parcel src/index.pug --open 'safari'",
+    "build": "rm dist/* && parcel build src/index.pug",
+    "imbapack": "imbapack --watch --mode=development src/*.imba -o src/index.js",
+    "imbac": "imbac --watch src/*.imba"
   },
   "devDependencies": {
     "imba": "^1.4.4",
