@@ -17,6 +17,16 @@ tag App
           <section>
             <div.ui.items>
               <div.item>
+                <div.content>
+                  <h2> "Reunion Postponed"
+                  <div.meta>
+                    <span> "Mon, Mar 17th, 2020"
+                  <div.description>
+                    <p> "Regretfully, we've decided to postpone our Reunion until the danger of the COVID-19 situation has passed. We are extremely disappointed, but protecting our family, especially our elderly members, is the most important thing. This situation will not last forever, and we will definitely reschedule!"
+                  <div.extra> "Karen D"
+          <section>
+            <div.ui.items>
+              <div.item>
                 <div.image>
                   <img.picture src=(fiestaImage) alt="Fiesta">
                 <div.content>

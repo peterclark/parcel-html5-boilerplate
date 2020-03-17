@@ -9,7 +9,6 @@
   "scripts": {
     "parcel": "parcel src/index.pug --open 'safari'",
     "build": "parcel build src/index.pug",
-    "imbapack": "imbapack --watch --mode=development src/*.imba -o src/index.js",
     "imbac": "imbac --watch src/*.imba"
   },
   "devDependencies": {
